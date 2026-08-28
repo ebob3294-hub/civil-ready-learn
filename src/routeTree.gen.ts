@@ -10,33 +10,53 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as LeconsIndexRouteImport } from './routes/lecons.index'
+import { Route as LeconsLessonIdRouteImport } from './routes/lecons.$lessonId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LeconsIndexRoute = LeconsIndexRouteImport.update({
+  id: '/lecons/',
+  path: '/lecons/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeconsLessonIdRoute = LeconsLessonIdRouteImport.update({
+  id: '/lecons/$lessonId',
+  path: '/lecons/$lessonId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/lecons/$lessonId': typeof LeconsLessonIdRoute
+  '/lecons/': typeof LeconsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/lecons/$lessonId': typeof LeconsLessonIdRoute
+  '/lecons': typeof LeconsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/lecons/$lessonId': typeof LeconsLessonIdRoute
+  '/lecons/': typeof LeconsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/lecons/$lessonId' | '/lecons/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/lecons/$lessonId' | '/lecons'
+  id: '__root__' | '/' | '/lecons/$lessonId' | '/lecons/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  LeconsLessonIdRoute: typeof LeconsLessonIdRoute
+  LeconsIndexRoute: typeof LeconsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +68,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/lecons/': {
+      id: '/lecons/'
+      path: '/lecons'
+      fullPath: '/lecons/'
+      preLoaderRoute: typeof LeconsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lecons/$lessonId': {
+      id: '/lecons/$lessonId'
+      path: '/lecons/$lessonId'
+      fullPath: '/lecons/$lessonId'
+      preLoaderRoute: typeof LeconsLessonIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  LeconsLessonIdRoute: LeconsLessonIdRoute,
+  LeconsIndexRoute: LeconsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

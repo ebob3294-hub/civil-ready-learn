@@ -35,7 +35,7 @@ function QuizRunner() {
   const [score, setScore] = useState(0);
   const [done, setDone] = useState(false);
 
-  const question = quiz.questions[index];
+  const question = quiz.questions[index]!;
   const progress = ((index + (selected !== null ? 1 : 0)) / quiz.questions.length) * 100;
 
   const restart = () => {

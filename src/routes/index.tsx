@@ -1,8 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { BookOpen, ChevronRight, ListChecks } from "lucide-react";
+import { useEffect, useState } from "react";
+import { BookOpen, ChevronRight, ListChecks, Play } from "lucide-react";
 import { AppShell } from "@/components/AppShell";
 import { CategoryIcon } from "@/components/CategoryIcon";
 import { categories, lessons, quizzes } from "@/data/content";
+import { loadAllProgress } from "@/lib/progress";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -25,6 +28,20 @@ export const Route = createFileRoute("/")({
 
 function Dashboard() {
   const questionCount = quizzes.reduce((n, q) => n + q.questions.length, 0);
+  const [resume, setResume] = useState<{ quizId: string; title: string; index: number } | null>(
+    null,
+  );
+
+  useEffect(() => {
+    const all = Object.values(loadAllProgress())
+      .filter((p) => !p.done)
+      .sort((a, b) => b.updatedAt - a.updatedAt);
+    const latest = all[0];
+    const quiz = latest ? quizzes.find((q) => q.id === latest.quizId) : undefined;
+    if (latest && quiz) setResume({ quizId: quiz.id, title: quiz.title, index: latest.index });
+  }, []);
+
+
 
   return (
     <AppShell title="Protection Civile" subtitle="Centre de formation & entraînement">
@@ -41,6 +58,29 @@ function Dashboard() {
           <Stat value={String(questionCount)} label="Questions" />
         </div>
       </section>
+
+      {resume ? (
+        <Link
+          to="/qcm/$quizId"
+          params={{ quizId: resume.quizId }}
+          className="surface-card tap mt-4 grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 rounded-2xl border-primary/40 p-4"
+        >
+          <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-accent text-accent-foreground">
+            <Play className="size-5" />
+          </span>
+          <span className="min-w-0">
+            <span className="block text-[11px] font-semibold tracking-widest text-primary uppercase">
+              Reprendre
+            </span>
+            <span className="block truncate text-sm font-semibold">{resume.title}</span>
+            <span className="block text-xs text-muted-foreground">
+              Question {resume.index + 1}
+            </span>
+          </span>
+          <ChevronRight className="size-5 text-muted-foreground" />
+        </Link>
+      ) : null}
+
 
       <div className="mt-5 grid gap-3">
         <QuickCard

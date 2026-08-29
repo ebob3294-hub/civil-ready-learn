@@ -1,8 +1,9 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { useState } from "react";
-import { Check, RotateCcw, Trophy, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Check, RotateCcw, Save, Trophy, X } from "lucide-react";
 import { AppShell } from "@/components/AppShell";
 import { getQuiz } from "@/data/content";
+import { clearProgress, loadProgress, saveProgress } from "@/lib/progress";
 
 export const Route = createFileRoute("/qcm/$quizId")({
   loader: ({ params }) => {
@@ -15,7 +16,7 @@ export const Route = createFileRoute("/qcm/$quizId")({
       return { meta: [{ title: "QCM introuvable" }, { name: "robots", content: "noindex" }] };
     }
     const { quiz } = loaderData;
-    const description = `QCM ${quiz.title} : ${quiz.questions.length} questions avec correction immédiate et score final.`;
+    const description = `QCM ${quiz.title} : ${quiz.questions.length} questions avec correction immédiate, score final et reprise automatique hors ligne.`;
     return {
       meta: [
         { title: `${quiz.title} — QCM Protection Civile` },
@@ -34,15 +35,37 @@ function QuizRunner() {
   const [selected, setSelected] = useState<number | null>(null);
   const [score, setScore] = useState(0);
   const [done, setDone] = useState(false);
+  const [hydrated, setHydrated] = useState(false);
+  const [resumed, setResumed] = useState(false);
+
+  // Restore locally saved progress after hydration (offline-friendly).
+  useEffect(() => {
+    const saved = loadProgress(quiz.id);
+    if (saved && (saved.index > 0 || saved.done || saved.score > 0)) {
+      setIndex(Math.min(saved.index, quiz.questions.length - 1));
+      setScore(saved.score);
+      setDone(saved.done);
+      setResumed(!saved.done);
+    }
+    setHydrated(true);
+  }, [quiz.id, quiz.questions.length]);
+
+  // Persist after every change, once restored.
+  useEffect(() => {
+    if (!hydrated) return;
+    saveProgress({ quizId: quiz.id, index, score, answers: [], done });
+  }, [hydrated, quiz.id, index, score, done]);
 
   const question = quiz.questions[index]!;
   const progress = ((index + (selected !== null ? 1 : 0)) / quiz.questions.length) * 100;
 
   const restart = () => {
+    clearProgress(quiz.id);
     setIndex(0);
     setSelected(null);
     setScore(0);
     setDone(false);
+    setResumed(false);
   };
 
   const choose = (i: number) => {
@@ -103,7 +126,24 @@ function QuizRunner() {
   }
 
   return (
-    <AppShell title={quiz.title} subtitle={`Question ${index + 1} / ${quiz.questions.length}`} back={{ to: "/qcm" }}>
+    <AppShell
+      title={quiz.title}
+      subtitle={`Question ${index + 1} / ${quiz.questions.length}`}
+      back={{ to: "/qcm" }}
+    >
+      {resumed ? (
+        <div className="mb-4 flex items-center gap-2 rounded-xl bg-secondary p-3 text-xs text-secondary-foreground">
+          <Save className="size-4 shrink-0 text-primary" />
+          <span className="min-w-0">Progression reprise à la question {index + 1}.</span>
+          <button
+            onClick={restart}
+            className="tap ml-auto shrink-0 rounded-lg border border-border px-2 py-1 font-semibold"
+          >
+            Recommencer
+          </button>
+        </div>
+      ) : null}
+
       <div className="flex items-center gap-3">
         <div className="h-2 flex-1 overflow-hidden rounded-full bg-secondary">
           <div
@@ -111,9 +151,7 @@ function QuizRunner() {
             style={{ width: `${progress}%` }}
           />
         </div>
-        <span className="font-display shrink-0 text-sm font-semibold text-primary">
-          {score} pts
-        </span>
+        <span className="font-display shrink-0 text-sm font-semibold text-primary">{score} pts</span>
       </div>
 
       <h2 className="mt-5 text-xl leading-snug font-semibold">{question.question}</h2>

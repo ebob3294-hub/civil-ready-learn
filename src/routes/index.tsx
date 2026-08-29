@@ -1,8 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { BookOpen, ChevronRight, ListChecks } from "lucide-react";
+import { useEffect, useState } from "react";
+import { BookOpen, ChevronRight, ListChecks, Play } from "lucide-react";
 import { AppShell } from "@/components/AppShell";
 import { CategoryIcon } from "@/components/CategoryIcon";
 import { categories, lessons, quizzes } from "@/data/content";
+import { loadAllProgress } from "@/lib/progress";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -25,6 +28,20 @@ export const Route = createFileRoute("/")({
 
 function Dashboard() {
   const questionCount = quizzes.reduce((n, q) => n + q.questions.length, 0);
+  const [resume, setResume] = useState<{ quizId: string; title: string; index: number } | null>(
+    null,
+  );
+
+  useEffect(() => {
+    const all = Object.values(loadAllProgress())
+      .filter((p) => !p.done)
+      .sort((a, b) => b.updatedAt - a.updatedAt);
+    const latest = all[0];
+    const quiz = latest ? quizzes.find((q) => q.id === latest.quizId) : undefined;
+    if (latest && quiz) setResume({ quizId: quiz.id, title: quiz.title, index: latest.index });
+  }, []);
+
+
 
   return (
     <AppShell title="Protection Civile" subtitle="Centre de formation & entraînement">

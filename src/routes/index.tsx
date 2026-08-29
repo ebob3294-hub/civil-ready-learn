@@ -59,6 +59,29 @@ function Dashboard() {
         </div>
       </section>
 
+      {resume ? (
+        <Link
+          to="/qcm/$quizId"
+          params={{ quizId: resume.quizId }}
+          className="surface-card tap mt-4 grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 rounded-2xl border-primary/40 p-4"
+        >
+          <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-accent text-accent-foreground">
+            <Play className="size-5" />
+          </span>
+          <span className="min-w-0">
+            <span className="block text-[11px] font-semibold tracking-widest text-primary uppercase">
+              Reprendre
+            </span>
+            <span className="block truncate text-sm font-semibold">{resume.title}</span>
+            <span className="block text-xs text-muted-foreground">
+              Question {resume.index + 1}
+            </span>
+          </span>
+          <ChevronRight className="size-5 text-muted-foreground" />
+        </Link>
+      ) : null}
+
+
       <div className="mt-5 grid gap-3">
         <QuickCard
           to="/lecons"

@@ -265,8 +265,12 @@ export const lessonsSpecialites: Lesson[] = [
       { type: "h", text: "Lecture du feu" },
       {
         type: "list",
-        items: "Fumées : volume, vitesse, densité, couleur — les quatre paramètres à analyser."
-          .split("|"),
+        items: [
+          "Volume des fumées : quantité de combustible en cause.",
+          "Vitesse : puissance du foyer et niveau de pression.",
+          "Densité : opacité et charge en imbrûlés.",
+          "Couleur : nature des matériaux et stade du feu.",
+        ],
       },
       {
         type: "list",

@@ -1,10 +1,18 @@
-export type CategoryId = "incendie" | "secourisme" | "operations" | "materiel";
+export type CategoryId =
+  | "incendie"
+  | "secourisme"
+  | "operations"
+  | "materiel"
+  | "risques"
+  | "sauvetage";
 
 export const categories: { id: CategoryId; label: string }[] = [
-  { id: "incendie", label: "Incendie" },
-  { id: "secourisme", label: "Secourisme" },
-  { id: "operations", label: "Opérations Diverses" },
+  { id: "incendie", label: "Incendie (INC)" },
+  { id: "secourisme", label: "Secours à personnes (SAP)" },
+  { id: "operations", label: "Opérations Diverses (OD)" },
   { id: "materiel", label: "Matériel" },
+  { id: "risques", label: "Risques technologiques (RT)" },
+  { id: "sauvetage", label: "Sauvetage & Déblaiement (SDE)" },
 ];
 
 export type LevelId = "niveau-1" | "niveau-2" | "niveau-avance";

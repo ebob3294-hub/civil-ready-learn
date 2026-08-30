@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AproposRouteImport } from './routes/apropos'
 import { Route as LeconsIndexRouteImport } from './routes/lecons.index'
 import { Route as LeconsLessonIdRouteImport } from './routes/lecons.$lessonId'
 import { Route as QcmIndexRouteImport } from './routes/qcm.index'
@@ -18,6 +19,11 @@ import { Route as QcmQuizIdRouteImport } from './routes/qcm.$quizId'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AproposRoute = AproposRouteImport.update({
+  id: '/apropos',
+  path: '/apropos',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LeconsIndexRoute = LeconsIndexRouteImport.update({
@@ -43,6 +49,7 @@ const QcmQuizIdRoute = QcmQuizIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/apropos': typeof AproposRoute
   '/lecons/$lessonId': typeof LeconsLessonIdRoute
   '/qcm/$quizId': typeof QcmQuizIdRoute
   '/lecons/': typeof LeconsIndexRoute
@@ -50,6 +57,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/apropos': typeof AproposRoute
   '/lecons/$lessonId': typeof LeconsLessonIdRoute
   '/qcm/$quizId': typeof QcmQuizIdRoute
   '/lecons': typeof LeconsIndexRoute
@@ -58,6 +66,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/apropos': typeof AproposRoute
   '/lecons/$lessonId': typeof LeconsLessonIdRoute
   '/qcm/$quizId': typeof QcmQuizIdRoute
   '/lecons/': typeof LeconsIndexRoute
@@ -65,12 +74,20 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/lecons/$lessonId' | '/qcm/$quizId' | '/lecons/' | '/qcm/'
+  fullPaths:
+    | '/'
+    | '/apropos'
+    | '/lecons/$lessonId'
+    | '/qcm/$quizId'
+    | '/lecons/'
+    | '/qcm/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/lecons/$lessonId' | '/qcm/$quizId' | '/lecons' | '/qcm'
+  to:
+    '/' | '/apropos' | '/lecons/$lessonId' | '/qcm/$quizId' | '/lecons' | '/qcm'
   id:
     | '__root__'
     | '/'
+    | '/apropos'
     | '/lecons/$lessonId'
     | '/qcm/$quizId'
     | '/lecons/'
@@ -79,6 +96,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AproposRoute: typeof AproposRoute
   LeconsLessonIdRoute: typeof LeconsLessonIdRoute
   QcmQuizIdRoute: typeof QcmQuizIdRoute
   LeconsIndexRoute: typeof LeconsIndexRoute
@@ -92,6 +110,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/apropos': {
+      id: '/apropos'
+      path: '/apropos'
+      fullPath: '/apropos'
+      preLoaderRoute: typeof AproposRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/lecons/': {
@@ -127,6 +152,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AproposRoute: AproposRoute,
   LeconsLessonIdRoute: LeconsLessonIdRoute,
   QcmQuizIdRoute: QcmQuizIdRoute,
   LeconsIndexRoute: LeconsIndexRoute,

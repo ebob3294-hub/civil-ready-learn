@@ -1,3 +1,3 @@
 export * from "./types";
-export { lessons, getLesson } from "./lessons";
-export { quizzes, getQuiz } from "./quizzes";
+export { lessons, getLesson } from "./all-lessons";
+export { quizzes, getQuiz } from "./all-quizzes";

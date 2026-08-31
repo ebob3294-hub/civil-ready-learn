@@ -13,6 +13,9 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AproposRouteImport } from './routes/apropos'
 import { Route as LeconsIndexRouteImport } from './routes/lecons.index'
 import { Route as LeconsLessonIdRouteImport } from './routes/lecons.$lessonId'
+import { Route as MaterielIndexRouteImport } from './routes/materiel.index'
+import { Route as MaterielMaterielIdRouteImport } from './routes/materiel.$materielId'
+import { Route as MaterielJeuRouteImport } from './routes/materiel.jeu'
 import { Route as QcmIndexRouteImport } from './routes/qcm.index'
 import { Route as QcmQuizIdRouteImport } from './routes/qcm.$quizId'
 
@@ -36,6 +39,21 @@ const LeconsLessonIdRoute = LeconsLessonIdRouteImport.update({
   path: '/lecons/$lessonId',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MaterielIndexRoute = MaterielIndexRouteImport.update({
+  id: '/materiel/',
+  path: '/materiel/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MaterielMaterielIdRoute = MaterielMaterielIdRouteImport.update({
+  id: '/materiel/$materielId',
+  path: '/materiel/$materielId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MaterielJeuRoute = MaterielJeuRouteImport.update({
+  id: '/materiel/jeu',
+  path: '/materiel/jeu',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const QcmIndexRoute = QcmIndexRouteImport.update({
   id: '/qcm/',
   path: '/qcm/',
@@ -51,16 +69,22 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/apropos': typeof AproposRoute
   '/lecons/$lessonId': typeof LeconsLessonIdRoute
+  '/materiel/$materielId': typeof MaterielMaterielIdRoute
+  '/materiel/jeu': typeof MaterielJeuRoute
   '/qcm/$quizId': typeof QcmQuizIdRoute
   '/lecons/': typeof LeconsIndexRoute
+  '/materiel/': typeof MaterielIndexRoute
   '/qcm/': typeof QcmIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/apropos': typeof AproposRoute
   '/lecons/$lessonId': typeof LeconsLessonIdRoute
+  '/materiel/$materielId': typeof MaterielMaterielIdRoute
+  '/materiel/jeu': typeof MaterielJeuRoute
   '/qcm/$quizId': typeof QcmQuizIdRoute
   '/lecons': typeof LeconsIndexRoute
+  '/materiel': typeof MaterielIndexRoute
   '/qcm': typeof QcmIndexRoute
 }
 export interface FileRoutesById {
@@ -68,8 +92,11 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/apropos': typeof AproposRoute
   '/lecons/$lessonId': typeof LeconsLessonIdRoute
+  '/materiel/$materielId': typeof MaterielMaterielIdRoute
+  '/materiel/jeu': typeof MaterielJeuRoute
   '/qcm/$quizId': typeof QcmQuizIdRoute
   '/lecons/': typeof LeconsIndexRoute
+  '/materiel/': typeof MaterielIndexRoute
   '/qcm/': typeof QcmIndexRoute
 }
 export interface FileRouteTypes {
@@ -78,19 +105,33 @@ export interface FileRouteTypes {
     | '/'
     | '/apropos'
     | '/lecons/$lessonId'
+    | '/materiel/$materielId'
+    | '/materiel/jeu'
     | '/qcm/$quizId'
     | '/lecons/'
+    | '/materiel/'
     | '/qcm/'
   fileRoutesByTo: FileRoutesByTo
   to:
-    '/' | '/apropos' | '/lecons/$lessonId' | '/qcm/$quizId' | '/lecons' | '/qcm'
+    | '/'
+    | '/apropos'
+    | '/lecons/$lessonId'
+    | '/materiel/$materielId'
+    | '/materiel/jeu'
+    | '/qcm/$quizId'
+    | '/lecons'
+    | '/materiel'
+    | '/qcm'
   id:
     | '__root__'
     | '/'
     | '/apropos'
     | '/lecons/$lessonId'
+    | '/materiel/$materielId'
+    | '/materiel/jeu'
     | '/qcm/$quizId'
     | '/lecons/'
+    | '/materiel/'
     | '/qcm/'
   fileRoutesById: FileRoutesById
 }
@@ -98,8 +139,11 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AproposRoute: typeof AproposRoute
   LeconsLessonIdRoute: typeof LeconsLessonIdRoute
+  MaterielMaterielIdRoute: typeof MaterielMaterielIdRoute
+  MaterielJeuRoute: typeof MaterielJeuRoute
   QcmQuizIdRoute: typeof QcmQuizIdRoute
   LeconsIndexRoute: typeof LeconsIndexRoute
+  MaterielIndexRoute: typeof MaterielIndexRoute
   QcmIndexRoute: typeof QcmIndexRoute
 }
 
@@ -133,6 +177,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LeconsLessonIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/materiel/': {
+      id: '/materiel/'
+      path: '/materiel'
+      fullPath: '/materiel/'
+      preLoaderRoute: typeof MaterielIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/materiel/$materielId': {
+      id: '/materiel/$materielId'
+      path: '/materiel/$materielId'
+      fullPath: '/materiel/$materielId'
+      preLoaderRoute: typeof MaterielMaterielIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/materiel/jeu': {
+      id: '/materiel/jeu'
+      path: '/materiel/jeu'
+      fullPath: '/materiel/jeu'
+      preLoaderRoute: typeof MaterielJeuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/qcm/': {
       id: '/qcm/'
       path: '/qcm'
@@ -154,8 +219,11 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AproposRoute: AproposRoute,
   LeconsLessonIdRoute: LeconsLessonIdRoute,
+  MaterielMaterielIdRoute: MaterielMaterielIdRoute,
+  MaterielJeuRoute: MaterielJeuRoute,
   QcmQuizIdRoute: QcmQuizIdRoute,
   LeconsIndexRoute: LeconsIndexRoute,
+  MaterielIndexRoute: MaterielIndexRoute,
   QcmIndexRoute: QcmIndexRoute,
 }
 export const routeTree = rootRouteImport

@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { BookOpen, ChevronLeft, House, Info, ListChecks, Shield } from "lucide-react";
+import { BookOpen, ChevronLeft, House, Info, ListChecks, Shield, Wrench } from "lucide-react";
 import type { ReactNode } from "react";
 
 export function AppShell({
@@ -54,6 +54,7 @@ export function AppShell({
         <TabLink to="/" label="Accueil" icon={<House className="size-5" />} />
         <TabLink to="/lecons" label="Leçons" icon={<BookOpen className="size-5" />} />
         <TabLink to="/qcm" label="QCM" icon={<ListChecks className="size-5" />} />
+        <TabLink to="/materiel" label="Matériel" icon={<Wrench className="size-5" />} />
       </nav>
     </div>
   );

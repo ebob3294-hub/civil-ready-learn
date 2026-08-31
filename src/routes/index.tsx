@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { BookOpen, ChevronRight, ListChecks, Play } from "lucide-react";
+import { BookOpen, ChevronRight, ListChecks, Play, Wrench } from "lucide-react";
 import { AppShell } from "@/components/AppShell";
 import { CategoryIcon } from "@/components/CategoryIcon";
 import { categories, lessons, quizzes } from "@/data/content";
@@ -94,6 +94,12 @@ function Dashboard() {
           title="QCM Tests"
           desc="Score en direct et correction immédiate"
           icon={<ListChecks className="size-6" />}
+        />
+        <QuickCard
+          to="/materiel"
+          title="Matériel & Engins"
+          desc="Photos, fiches et jeu de reconnaissance"
+          icon={<Wrench className="size-6" />}
         />
       </div>
 

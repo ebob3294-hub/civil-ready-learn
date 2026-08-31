@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { BookOpen, ChevronLeft, House, ListChecks, Shield } from "lucide-react";
+import { BookOpen, ChevronLeft, House, Info, ListChecks, Shield } from "lucide-react";
 import type { ReactNode } from "react";
 
 export function AppShell({
@@ -38,6 +38,13 @@ export function AppShell({
               ) : null}
             </div>
           </div>
+          <Link
+            to="/apropos"
+            aria-label="À propos"
+            className="tap grid size-9 shrink-0 place-items-center rounded-full bg-sidebar-accent text-sidebar-accent-foreground"
+          >
+            <Info className="size-5" />
+          </Link>
         </div>
       </header>
 

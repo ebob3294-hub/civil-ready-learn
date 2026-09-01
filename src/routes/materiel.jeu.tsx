@@ -37,7 +37,7 @@ function shuffle<T>(arr: T[]): T[] {
 type Round = { item: MaterielItem; options: string[] };
 
 function buildRounds(): Round[] {
-  return shuffle(materiels).map((item) => {
+  return shuffle(materiels).slice(0, 15).map((item) => {
     const others = shuffle(materiels.filter((m) => m.id !== item.id))
       .slice(0, 3)
       .map((m) => m.name);

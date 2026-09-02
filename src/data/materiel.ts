@@ -18,6 +18,18 @@ import imgNrbc from "@/assets/materiel-nrbc.jpg";
 import imgCordages from "@/assets/materiel-cordages.jpg";
 import imgBalisage from "@/assets/materiel-balisage.jpg";
 import imgAmbulance from "@/assets/engin-ambulance.jpg";
+import imgExtincteurs from "@/assets/materiel-extincteurs.jpg";
+import imgOutilsMain from "@/assets/materiel-outils-main.jpg";
+import imgAquatique from "@/assets/materiel-aquatique.jpg";
+import imgBateau from "@/assets/engin-bateau.jpg";
+import imgVentilation from "@/assets/materiel-ventilation.jpg";
+import imgEclairage from "@/assets/materiel-eclairage.jpg";
+import imgTransmissions from "@/assets/materiel-transmissions.jpg";
+import imgDae from "@/assets/materiel-dae.jpg";
+import imgMousse from "@/assets/materiel-mousse.jpg";
+import imgEchelleAerienne from "@/assets/engin-echelle.jpg";
+import imgCalage from "@/assets/materiel-calage.jpg";
+import imgVtu from "@/assets/engin-vtu.jpg";
 
 export type MaterielItem = {
   id: string;

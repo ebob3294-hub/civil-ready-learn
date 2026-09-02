@@ -18,6 +18,18 @@ import imgNrbc from "@/assets/materiel-nrbc.jpg";
 import imgCordages from "@/assets/materiel-cordages.jpg";
 import imgBalisage from "@/assets/materiel-balisage.jpg";
 import imgAmbulance from "@/assets/engin-ambulance.jpg";
+import imgExtincteurs from "@/assets/materiel-extincteurs.jpg";
+import imgOutilsMain from "@/assets/materiel-outils-main.jpg";
+import imgAquatique from "@/assets/materiel-aquatique.jpg";
+import imgBateau from "@/assets/engin-bateau.jpg";
+import imgVentilation from "@/assets/materiel-ventilation.jpg";
+import imgEclairage from "@/assets/materiel-eclairage.jpg";
+import imgTransmissions from "@/assets/materiel-transmissions.jpg";
+import imgDae from "@/assets/materiel-dae.jpg";
+import imgMousse from "@/assets/materiel-mousse.jpg";
+import imgEchelleAerienne from "@/assets/engin-echelle.jpg";
+import imgCalage from "@/assets/materiel-calage.jpg";
+import imgVtu from "@/assets/engin-vtu.jpg";
 
 export type MaterielItem = {
   id: string;
@@ -307,6 +319,174 @@ export const materiels: MaterielItem[] = [
       "Oxygénothérapie, BAVU, aspirateur de mucosités, DAE",
       "Sac de premiers secours et attelles",
       "Missions : bilan, gestes d'urgence, relevage et transport",
+    ],
+  },
+  {
+    id: "extincteurs",
+    name: "Extincteurs",
+    group: "materiel",
+    image: imgExtincteurs,
+    desc: "Moyens de première intervention, choisis selon la classe de feu.",
+    items: [
+      "Eau pulvérisée + additif : feux de classe A (solides)",
+      "Poudre ABC : feux A, B et C (gaz), polyvalent",
+      "CO2 (neige carbonique) : feux d'origine électrique, sans résidu",
+      "Méthode : dégoupiller, viser la base des flammes, balayer",
+      "Contrôle annuel obligatoire, pression et goupille avant emploi",
+    ],
+  },
+  {
+    id: "outils-main",
+    name: "Outils à main (hache, pelle, pioche...)",
+    group: "materiel",
+    image: imgOutilsMain,
+    desc: "Outillage manuel de déblai, d'ouverture et d'attaque des feux d'espaces naturels.",
+    items: [
+      "Hache de pompier et hachette de ceinturon",
+      "Pelle, pioche et hache-pioche pour tranchées et déblai",
+      "Barre Halligan et pied-de-biche pour ouverture de porte",
+      "Masse et coins de bois pour le calage",
+      "Batte à feu et râteau pour feux de végétation",
+    ],
+  },
+  {
+    id: "aquatique",
+    name: "Matériel de sauvetage aquatique",
+    group: "materiel",
+    image: imgAquatique,
+    desc: "Sauvetage en surface, berges, inondations et milieu aquatique.",
+    items: [
+      "Gilet de sauvetage / VFI porté obligatoirement à bord",
+      "Bouée-couronne et bouée tube de sauvetage",
+      "Sac à corde (throw bag) pour lancer depuis la berge",
+      "Combinaison néoprène, palmes, masque et casque nautique",
+      "Règle d'or : jamais d'entrée à l'eau sans sécurité amont/aval",
+    ],
+  },
+  {
+    id: "engin-bateau",
+    name: "Embarcation de sauvetage (BLS)",
+    group: "engin",
+    image: imgBateau,
+    desc: "Bateau léger de sauvetage utilisé en inondation et en milieu fluvial.",
+    items: [
+      "Coque pneumatique semi-rigide et moteur hors-bord",
+      "Équipage formé SAV : pilote et équipier de bord",
+      "Matériel de bord : gaffe, corde, écope, ancre, éclairage",
+      "Reconnaissance des courants, obstacles immergés, lignes électriques",
+      "Comptage strict des personnes évacuées",
+    ],
+  },
+  {
+    id: "ventilation",
+    name: "Ventilateur de désenfumage (VO)",
+    group: "materiel",
+    image: imgVentilation,
+    desc: "Ventilation opérationnelle : évacuer fumées et chaleur pour faciliter l'attaque.",
+    items: [
+      "Ventilateur à pression positive placé en entrée d'air",
+      "Cône d'air couvrant tout l'encadrement de la porte",
+      "Sortie de fumée créée avant la mise en route",
+      "Ventilation d'attaque, de protection ou de désenfumage",
+      "Risque : apport d'oxygène au foyer si mauvaise coordination",
+    ],
+  },
+  {
+    id: "eclairage",
+    name: "Groupe électrogène et éclairage",
+    group: "materiel",
+    image: imgEclairage,
+    desc: "Production d'énergie et éclairage de la zone d'intervention de nuit.",
+    items: [
+      "Groupe électrogène portatif et enrouleurs",
+      "Projecteurs sur trépied et mâts d'éclairage",
+      "Lampes individuelles ATEX en milieu explosible",
+      "Mise à la terre et protection différentielle",
+      "Échappement toujours à l'extérieur (risque de CO)",
+    ],
+  },
+  {
+    id: "transmissions",
+    name: "Matériel de transmissions",
+    group: "materiel",
+    image: imgTransmissions,
+    desc: "Radio et messages opérationnels entre intervenants et CTA-CODIS.",
+    items: [
+      "Poste radio portatif et poste mobile de l'engin",
+      "Indicatifs, canaux tactiques et discipline d'écoute",
+      "Messages : départ, présentation, ambiance, demande de moyens, rentrée",
+      "Parler court, clair et concis",
+      "Contrôle de la batterie et du canal avant le départ",
+    ],
+  },
+  {
+    id: "dae",
+    name: "DAE et sac de premiers secours",
+    group: "materiel",
+    image: imgDae,
+    desc: "Défibrillateur automatisé externe et lot de secours à personne.",
+    items: [
+      "DAE mis en place immédiatement dès un arrêt cardiaque",
+      "Électrodes sous la clavicule droite et sous l'aisselle gauche",
+      "Ne jamais toucher la victime pendant l'analyse et le choc",
+      "Sac PS : pansements, garrot, couverture de survie, oxymètre",
+      "Contrôle des dates de péremption et de la batterie",
+    ],
+  },
+  {
+    id: "mousse",
+    name: "Lance à mousse et émulseur",
+    group: "materiel",
+    image: imgMousse,
+    desc: "Extinction par étouffement des feux d'hydrocarbures et liquides inflammables.",
+    items: [
+      "Émulseur AFFF dosé généralement de 3 % à 6 %",
+      "Injecteur ou pré-mélange dans l'établissement",
+      "Mousse bas, moyen et haut foisonnement",
+      "Application douce sur paroi ou au sol, jamais en jet direct",
+      "Maintien du tapis de mousse jusqu'au refroidissement complet",
+    ],
+  },
+  {
+    id: "engin-echelle",
+    name: "Échelle aérienne (EPA / EPSA)",
+    group: "engin",
+    image: imgEchelleAerienne,
+    desc: "Moyen élévateur aérien de sauvetage et d'attaque en hauteur.",
+    items: [
+      "Parc échelle de 24 à 30 m selon les modèles",
+      "Calage sur sol stable, stabilisateurs déployés",
+      "Nacelle ou plan incliné pour évacuer les victimes",
+      "Distance de sécurité vis-à-vis des lignes électriques",
+      "Un seul manœuvrant aux commandes, guidé par le chef d'agrès",
+    ],
+  },
+  {
+    id: "calage",
+    name: "Calage et stabilisation (secours routier)",
+    group: "materiel",
+    image: imgCalage,
+    desc: "Stabiliser le véhicule accidenté avant toute désincarcération.",
+    items: [
+      "Cales escalier, coins et blocs de bois",
+      "Coussins de levage haute pression et étais réglables",
+      "Trois points d'appui minimum, véhicule immobilisé",
+      "Contrôle permanent du calage pendant les manœuvres",
+      "Protection des arêtes vives et des airbags non déclenchés",
+    ],
+  },
+  {
+    id: "engin-vtu",
+    name: "Véhicule tout usage (VTU)",
+    group: "engin",
+    image: imgVtu,
+    desc: "Engin polyvalent des opérations diverses (OD).",
+    items: [
+      "Épuisement : motopompe, vide-cave, aspirateur à eau",
+      "Bâchage, tronçonnage et capture d'animaux",
+      "Ouverture de porte et destruction d'hyménoptères",
+      "Balisage, éclairage et petit outillage",
+      "Équipage réduit : chef d'agrès + conducteur (+ équipier)",
     ],
   },
 ];

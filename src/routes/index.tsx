@@ -98,8 +98,14 @@ function Dashboard() {
         <QuickCard
           to="/materiel"
           title="Matériel & Engins"
-          desc="Photos, fiches et jeu de reconnaissance"
+          desc="Photos et fiches illustrées"
           icon={<Wrench className="size-6" />}
+        />
+        <QuickCard
+          to="/jeu"
+          title="Jeu de reconnaissance"
+          desc="Identifie le matériel sur la photo"
+          icon={<Gamepad2 className="size-6" />}
         />
       </div>
 

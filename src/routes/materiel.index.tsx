@@ -30,25 +30,7 @@ function MaterielPage() {
   ];
 
   return (
-    <AppShell title="Matériel" subtitle="Photos, fiches & jeu">
-      <Link
-        to="/materiel/jeu"
-        className="bg-alert shadow-alert tap grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 rounded-2xl p-4 text-primary-foreground"
-      >
-        <span className="grid size-11 place-items-center rounded-xl bg-primary-foreground/15">
-          <Gamepad2 className="size-6" />
-        </span>
-        <span className="min-w-0">
-          <span className="font-display block text-lg leading-tight font-semibold uppercase">
-            Jeu de reconnaissance
-          </span>
-          <span className="block truncate text-xs opacity-85">
-            Identifie le matériel sur la photo
-          </span>
-        </span>
-        <ChevronRight className="size-5" />
-      </Link>
-
+    <AppShell title="Matériel" subtitle="Photos & fiches">
       {groups.map((g) => (
         <div key={g.key}>
           <h2 className="mt-7 mb-3 text-sm font-semibold tracking-[0.14em] text-muted-foreground uppercase">

@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { BookOpen, ChevronLeft, House, Info, ListChecks, Shield, Wrench } from "lucide-react";
+import { BookOpen, Gamepad2, House, Info, ListChecks, Wrench } from "lucide-react";
 import type { ReactNode } from "react";
 
 export function AppShell({

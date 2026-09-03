@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AproposRouteImport } from './routes/apropos'
+import { Route as JeuRouteImport } from './routes/jeu'
 import { Route as LeconsIndexRouteImport } from './routes/lecons.index'
 import { Route as LeconsLessonIdRouteImport } from './routes/lecons.$lessonId'
 import { Route as MaterielIndexRouteImport } from './routes/materiel.index'
@@ -27,6 +28,11 @@ const IndexRoute = IndexRouteImport.update({
 const AproposRoute = AproposRouteImport.update({
   id: '/apropos',
   path: '/apropos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JeuRoute = JeuRouteImport.update({
+  id: '/jeu',
+  path: '/jeu',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LeconsIndexRoute = LeconsIndexRouteImport.update({
@@ -68,6 +74,7 @@ const QcmQuizIdRoute = QcmQuizIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/apropos': typeof AproposRoute
+  '/jeu': typeof JeuRoute
   '/lecons/$lessonId': typeof LeconsLessonIdRoute
   '/materiel/$materielId': typeof MaterielMaterielIdRoute
   '/materiel/jeu': typeof MaterielJeuRoute
@@ -79,6 +86,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/apropos': typeof AproposRoute
+  '/jeu': typeof JeuRoute
   '/lecons/$lessonId': typeof LeconsLessonIdRoute
   '/materiel/$materielId': typeof MaterielMaterielIdRoute
   '/materiel/jeu': typeof MaterielJeuRoute
@@ -91,6 +99,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/apropos': typeof AproposRoute
+  '/jeu': typeof JeuRoute
   '/lecons/$lessonId': typeof LeconsLessonIdRoute
   '/materiel/$materielId': typeof MaterielMaterielIdRoute
   '/materiel/jeu': typeof MaterielJeuRoute
@@ -104,6 +113,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/apropos'
+    | '/jeu'
     | '/lecons/$lessonId'
     | '/materiel/$materielId'
     | '/materiel/jeu'
@@ -115,6 +125,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/apropos'
+    | '/jeu'
     | '/lecons/$lessonId'
     | '/materiel/$materielId'
     | '/materiel/jeu'
@@ -126,6 +137,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/apropos'
+    | '/jeu'
     | '/lecons/$lessonId'
     | '/materiel/$materielId'
     | '/materiel/jeu'
@@ -138,6 +150,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AproposRoute: typeof AproposRoute
+  JeuRoute: typeof JeuRoute
   LeconsLessonIdRoute: typeof LeconsLessonIdRoute
   MaterielMaterielIdRoute: typeof MaterielMaterielIdRoute
   MaterielJeuRoute: typeof MaterielJeuRoute
@@ -161,6 +174,13 @@ declare module '@tanstack/react-router' {
       path: '/apropos'
       fullPath: '/apropos'
       preLoaderRoute: typeof AproposRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/jeu': {
+      id: '/jeu'
+      path: '/jeu'
+      fullPath: '/jeu'
+      preLoaderRoute: typeof JeuRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/lecons/': {
@@ -218,6 +238,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AproposRoute: AproposRoute,
+  JeuRoute: JeuRoute,
   LeconsLessonIdRoute: LeconsLessonIdRoute,
   MaterielMaterielIdRoute: MaterielMaterielIdRoute,
   MaterielJeuRoute: MaterielJeuRoute,

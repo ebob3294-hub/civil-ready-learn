@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ChevronRight } from "lucide-react";
 import { AppShell } from "@/components/AppShell";
 import { materiels } from "@/data/materiel";
 

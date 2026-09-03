@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { BookOpen, ChevronRight, ListChecks, Play, Wrench } from "lucide-react";
+import { BookOpen, ChevronRight, Gamepad2, ListChecks, Play, Wrench } from "lucide-react";
 import { AppShell } from "@/components/AppShell";
 import { CategoryIcon } from "@/components/CategoryIcon";
 import { categories, lessons, quizzes } from "@/data/content";

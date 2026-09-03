@@ -55,6 +55,7 @@ export function AppShell({
         <TabLink to="/lecons" label="Leçons" icon={<BookOpen className="size-5" />} />
         <TabLink to="/qcm" label="QCM" icon={<ListChecks className="size-5" />} />
         <TabLink to="/materiel" label="Matériel" icon={<Wrench className="size-5" />} />
+        <TabLink to="/jeu" label="Jeu" icon={<Gamepad2 className="size-5" />} />
       </nav>
     </div>
   );

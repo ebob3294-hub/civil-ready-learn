@@ -4,7 +4,7 @@ import { Check, RotateCcw, X } from "lucide-react";
 import { AppShell } from "@/components/AppShell";
 import { materiels, type MaterielItem } from "@/data/materiel";
 
-export const Route = createFileRoute("/materiel/jeu")({
+export const Route = createFileRoute("/jeu")({
   head: () => ({
     meta: [
       { title: "Jeu de reconnaissance du matériel — Protection Civile" },
@@ -65,7 +65,7 @@ function MaterielGame() {
   if (done || !round) {
     const total = rounds.length;
     return (
-      <AppShell title="Jeu terminé" subtitle="Reconnaissance matériel" back={{ to: "/materiel" }}>
+      <AppShell title="Jeu terminé" subtitle="Reconnaissance matériel" back={{ to: "/" }}>
         <section className="surface-card rounded-2xl p-6 text-center">
           <p className="text-sm text-muted-foreground uppercase">Score final</p>
           <p className="font-display mt-2 text-5xl font-semibold text-primary">
@@ -90,7 +90,7 @@ function MaterielGame() {
   const correct = round.item.name;
 
   return (
-    <AppShell title="Jeu matériel" subtitle="Quel est ce matériel ?" back={{ to: "/materiel" }}>
+    <AppShell title="Jeu matériel" subtitle="Quel est ce matériel ?" back={{ to: "/" }}>
       <div className="flex items-center justify-between text-xs font-semibold text-muted-foreground uppercase">
         <span>
           Image {index + 1}/{rounds.length}

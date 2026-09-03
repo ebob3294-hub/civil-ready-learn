@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ChevronRight, Gamepad2 } from "lucide-react";
 import { AppShell } from "@/components/AppShell";
 import { materiels } from "@/data/materiel";
 
@@ -10,12 +9,12 @@ export const Route = createFileRoute("/materiel/")({
       {
         name: "description",
         content:
-          "Photos et fiches du matériel de désincarcération, outils divers, jonction, matériel de secours, tenues, EPI et engins (camion-citerne feu), avec un jeu de reconnaissance.",
+          "Photos et fiches du matériel de désincarcération, outils divers, jonction, matériel de secours, tenues, EPI et engins (camion-citerne feu).",
       },
       { property: "og:title", content: "Matériel & engins pompiers en images" },
       {
         property: "og:description",
-        content: "Fiches illustrées du matériel et des engins, plus un jeu de reconnaissance.",
+        content: "Fiches illustrées du matériel et des engins.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -31,25 +30,7 @@ function MaterielPage() {
   ];
 
   return (
-    <AppShell title="Matériel" subtitle="Photos, fiches & jeu">
-      <Link
-        to="/materiel/jeu"
-        className="bg-alert shadow-alert tap grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 rounded-2xl p-4 text-primary-foreground"
-      >
-        <span className="grid size-11 place-items-center rounded-xl bg-primary-foreground/15">
-          <Gamepad2 className="size-6" />
-        </span>
-        <span className="min-w-0">
-          <span className="font-display block text-lg leading-tight font-semibold uppercase">
-            Jeu de reconnaissance
-          </span>
-          <span className="block truncate text-xs opacity-85">
-            Identifie le matériel sur la photo
-          </span>
-        </span>
-        <ChevronRight className="size-5" />
-      </Link>
-
+    <AppShell title="Matériel" subtitle="Photos & fiches">
       {groups.map((g) => (
         <div key={g.key}>
           <h2 className="mt-7 mb-3 text-sm font-semibold tracking-[0.14em] text-muted-foreground uppercase">

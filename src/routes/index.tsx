@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { BookOpen, ChevronRight, ListChecks, Play, Wrench } from "lucide-react";
+import { BookOpen, ChevronRight, Gamepad2, ListChecks, Play, Wrench } from "lucide-react";
 import { AppShell } from "@/components/AppShell";
 import { CategoryIcon } from "@/components/CategoryIcon";
 import { categories, lessons, quizzes } from "@/data/content";
@@ -98,8 +98,14 @@ function Dashboard() {
         <QuickCard
           to="/materiel"
           title="Matériel & Engins"
-          desc="Photos, fiches et jeu de reconnaissance"
+          desc="Photos et fiches illustrées"
           icon={<Wrench className="size-6" />}
+        />
+        <QuickCard
+          to="/jeu"
+          title="Jeu de reconnaissance"
+          desc="Identifie le matériel sur la photo"
+          icon={<Gamepad2 className="size-6" />}
         />
       </div>
 

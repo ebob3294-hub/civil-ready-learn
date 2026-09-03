@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ChevronRight, Gamepad2 } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { AppShell } from "@/components/AppShell";
 import { materiels } from "@/data/materiel";
 
@@ -10,12 +10,12 @@ export const Route = createFileRoute("/materiel/")({
       {
         name: "description",
         content:
-          "Photos et fiches du matériel de désincarcération, outils divers, jonction, matériel de secours, tenues, EPI et engins (camion-citerne feu), avec un jeu de reconnaissance.",
+          "Photos et fiches du matériel de désincarcération, outils divers, jonction, matériel de secours, tenues, EPI et engins (camion-citerne feu).",
       },
       { property: "og:title", content: "Matériel & engins pompiers en images" },
       {
         property: "og:description",
-        content: "Fiches illustrées du matériel et des engins, plus un jeu de reconnaissance.",
+        content: "Fiches illustrées du matériel et des engins.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

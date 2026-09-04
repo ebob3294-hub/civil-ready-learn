@@ -31,6 +31,15 @@ import imgEchelleAerienne from "@/assets/engin-echelle.jpg";
 import imgCalage from "@/assets/materiel-calage.jpg";
 import imgVtu from "@/assets/engin-vtu.jpg";
 
+import imgCameraThermique from "@/assets/materiel-camera-thermique.jpg";
+import imgExtracteur from "@/assets/materiel-extracteur.jpg";
+import imgImmobilisation from "@/assets/materiel-immobilisation.jpg";
+import imgOxygene from "@/assets/materiel-oxygenotherapie.jpg";
+import imgOuverturePorte from "@/assets/materiel-ouverture-porte.jpg";
+import imgHymenopteres from "@/assets/materiel-hymenopteres.jpg";
+import imgFpt from "@/assets/engin-fpt.jpg";
+import imgVsr from "@/assets/engin-vsr.jpg";
+
 export type MaterielItem = {
   id: string;
   name: string;
@@ -487,6 +496,118 @@ export const materiels: MaterielItem[] = [
       "Ouverture de porte et destruction d'hyménoptères",
       "Balisage, éclairage et petit outillage",
       "Équipage réduit : chef d'agrès + conducteur (+ équipier)",
+    ],
+  },
+  {
+    id: "camera-thermique",
+    name: "Caméra thermique",
+    group: "materiel",
+    image: imgCameraThermique,
+    desc: "Aide à la reconnaissance en milieu enfumé et à la recherche de points chauds.",
+    items: [
+      "Recherche de victimes dans la fumée",
+      "Localisation du foyer et des propagations cachées",
+      "Contrôle après extinction (reprise de feu)",
+      "Ne voit pas à travers le verre ni l'eau",
+      "Contrôle de batterie avant chaque départ",
+    ],
+  },
+  {
+    id: "extracteur",
+    name: "Ventilateur / extracteur de fumées",
+    group: "materiel",
+    image: imgExtracteur,
+    desc: "Ventilation opérationnelle par pression positive ou extraction.",
+    items: [
+      "Ventilation d'attaque, de protection ou de désenfumage",
+      "Cône d'air couvrant toute l'ouverture entrante",
+      "Sortant au moins équivalent à l'entrant",
+      "Jamais mis en œuvre sans lance en place",
+      "Version électrique, thermique ou hydraulique",
+    ],
+  },
+  {
+    id: "immobilisation",
+    name: "Matériel d'immobilisation",
+    group: "materiel",
+    image: imgImmobilisation,
+    desc: "Immobilisation et relevage du traumatisé.",
+    items: [
+      "Collier cervical rigide de taille adaptée",
+      "Plan dur, sangles et cales-tête",
+      "Matelas immobilisateur à dépression (MID)",
+      "Attelles de membre et attelle de traction",
+      "Brancard cuillère et portoir souple",
+    ],
+  },
+  {
+    id: "oxygenotherapie",
+    name: "Matériel d'oxygénothérapie",
+    group: "materiel",
+    image: imgOxygene,
+    desc: "Administration d'oxygène et assistance ventilatoire.",
+    items: [
+      "Bouteille d'oxygène avec manodétendeur",
+      "Masque haute concentration : 9 à 15 L/min",
+      "Lunettes nasales : 1 à 6 L/min",
+      "Insufflateur manuel (BAVU) avec ballon réserve",
+      "Aspirateur de mucosités",
+    ],
+  },
+  {
+    id: "ouverture-porte",
+    name: "Lot d'ouverture de porte",
+    group: "materiel",
+    image: imgOuverturePorte,
+    desc: "Ouverture graduée, du moins au plus destructif.",
+    items: [
+      "Coffret de crochetage et radios d'ouverture",
+      "Pied-de-biche et barre Halligan",
+      "Vérin de porte / écarteur manuel",
+      "Outil de dégondage",
+      "Traçabilité écrite de toute dégradation",
+    ],
+  },
+  {
+    id: "hymenopteres",
+    name: "Lot hyménoptères",
+    group: "materiel",
+    image: imgHymenopteres,
+    desc: "Destruction de nids de guêpes et de frelons.",
+    items: [
+      "Combinaison intégrale, gants et cagoule",
+      "Perche télescopique de traitement",
+      "Poudre ou aérosol insecticide",
+      "Sac de récupération du nid",
+      "Intervention de préférence au crépuscule",
+    ],
+  },
+  {
+    id: "engin-fpt",
+    name: "Fourgon pompe-tonne (FPT)",
+    group: "engin",
+    image: imgFpt,
+    desc: "Engin de base de la lutte contre l'incendie urbain.",
+    items: [
+      "Pompe centrifuge et tonne de 2000 à 3000 L",
+      "Lances, tuyaux et dévidoir tournant",
+      "Échelles, ARI et lot de sauvetage",
+      "Équipage de 6 : chef d'agrès, conducteur, 2 binômes",
+      "Vérification quotidienne : eau, carburant, lot",
+    ],
+  },
+  {
+    id: "engin-vsr",
+    name: "Véhicule de secours routier (VSR)",
+    group: "engin",
+    image: imgVsr,
+    desc: "Engin dédié à la désincarcération et au secours routier.",
+    items: [
+      "Groupe hydraulique, écarteur, cisaille, vérins",
+      "Calage, coussins de levage et protections",
+      "Balisage et éclairage de chantier",
+      "Matériel de découpe et d'étaiement léger",
+      "Travaille en complément du VSAV",
     ],
   },
 ];

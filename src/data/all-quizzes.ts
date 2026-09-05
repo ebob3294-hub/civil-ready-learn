@@ -2,12 +2,14 @@ import type { Quiz } from "./types";
 import { quizzes as baseQuizzes } from "./quizzes";
 import { quizzesSpecialites } from "./quizzes-specialites";
 import { quizzesMateriel } from "./quizzes-materiel";
+import { quizzesPlus } from "./quizzes-plus";
 import { quizzesBanque } from "./quizzes-banque";
 
 export const quizzes: Quiz[] = [
   ...baseQuizzes,
   ...quizzesSpecialites,
   ...quizzesMateriel,
+  ...quizzesPlus,
   ...quizzesBanque,
 ];
 

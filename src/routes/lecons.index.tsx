@@ -26,6 +26,7 @@ export const Route = createFileRoute("/lecons/")({
 });
 
 function LessonsPage() {
+  const t = useT();
   const [level, setLevel] = useState<LevelId>("niveau-1");
   const [category, setCategory] = useState<CategoryId | "all">("all");
 

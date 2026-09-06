@@ -27,6 +27,7 @@ export const Route = createFileRoute("/qcm/")({
 });
 
 function QcmList() {
+  const t = useT();
   const [progress, setProgress] = useState<Record<string, QuizProgress>>({});
 
   useEffect(() => {

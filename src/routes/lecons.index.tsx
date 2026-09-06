@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { ChevronRight, Clock } from "lucide-react";
 import { AppShell } from "@/components/AppShell";
+import { useT } from "@/lib/i18n";
 import { CategoryIcon } from "@/components/CategoryIcon";
 import { categories, lessons, levels, type CategoryId, type LevelId } from "@/data/content";
 
@@ -34,7 +35,7 @@ function LessonsPage() {
   const current = levels.find((l) => l.id === level)!;
 
   return (
-    <AppShell title="Leçons" subtitle="Programme de formation">
+    <AppShell title={t("lessons")} subtitle="Programme de formation">
       <div className="hide-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4 pb-1">
         {levels.map((l) => (
           <button

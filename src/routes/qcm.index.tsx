@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { ChevronRight, ListChecks, Trash2 } from "lucide-react";
 import { AppShell } from "@/components/AppShell";
+import { useT } from "@/lib/i18n";
 import { CategoryIcon } from "@/components/CategoryIcon";
 import { levels, quizzes } from "@/data/content";
 import { clearAllProgress, loadAllProgress, type QuizProgress } from "@/lib/progress";
@@ -35,7 +36,7 @@ function QcmList() {
   const hasProgress = Object.keys(progress).length > 0;
 
   return (
-    <AppShell title="QCM Tests" subtitle="Évaluation des connaissances">
+    <AppShell title={t("quizzes")} subtitle="Évaluation des connaissances">
       <div className="grid gap-3">
         {quizzes.map((q) => {
           const level = levels.find((l) => l.id === q.level)!;

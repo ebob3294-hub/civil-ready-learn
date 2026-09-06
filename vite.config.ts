@@ -12,7 +12,6 @@ export default defineConfig({
     // SPA mode: emits a static index.html shell so the same build can be packaged
     // inside the Capacitor Android app (no server needed, fully offline).
     spa: { enabled: true },
-    prerender: { enabled: true },
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },

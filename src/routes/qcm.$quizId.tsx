@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Check, RotateCcw, Save, Trophy, X } from "lucide-react";
 import { AppShell } from "@/components/AppShell";
 import { getQuiz } from "@/data/content";
-import { clearProgress, loadProgress, saveProgress } from "@/lib/progress";
+import { addResult, clearProgress, loadProgress, saveProgress } from "@/lib/progress";
 
 export const Route = createFileRoute("/qcm/$quizId")({
   loader: ({ params }) => {
@@ -77,6 +77,7 @@ function QuizRunner() {
   const next = () => {
     if (index + 1 >= quiz.questions.length) {
       setDone(true);
+      addResult({ quizId: quiz.id, title: quiz.title, score, total: quiz.questions.length });
       return;
     }
     setIndex(index + 1);
@@ -113,6 +114,12 @@ function QuizRunner() {
             >
               <RotateCcw className="size-4" /> Recommencer
             </button>
+            <Link
+              to="/resultats"
+              className="tap rounded-xl border border-border px-4 py-3 text-sm font-semibold text-foreground uppercase"
+            >
+              Mes résultats
+            </Link>
             <Link
               to="/qcm"
               className="tap rounded-xl border border-border px-4 py-3 text-sm font-semibold text-foreground uppercase"

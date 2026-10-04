@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Formation SP</string>
+    <string name="title_activity_main">Formation SP</string>
+    <string name="package_name">com.protectioncivile.formationsp</string>
+    <string name="custom_url_scheme">com.protectioncivile.formationsp</string>
+</resources>

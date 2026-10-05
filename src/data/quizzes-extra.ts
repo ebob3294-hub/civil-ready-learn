@@ -1,0 +1,110 @@
+import type { Quiz } from "./types";
+
+export const quizzesExtra: Quiz[] = [
+ {
+  id: "qcm-extra-inc1",
+  title: "Incendie — Feux de véhicules et habitations",
+  level: "niveau-2",
+  category: "incendie",
+  questions: [
+   {"question": "Face à un feu de véhicule, on approche :", "options": ["Dans l'axe des pare-chocs", "En biais, jamais dans l'axe", "Par l'arrière uniquement", "Sans protection si le feu est petit"], "answer": 1, "explanation": "Airbags, amortisseurs et pneus explosent dans l'axe : on approche en biais."},
+   {"question": "Sur un feu de batterie lithium, après extinction :", "options": ["On quitte immédiatement", "On surveille longuement, le feu peut se rallumer", "On arrose une seule fois", "On découpe la batterie"], "answer": 1, "explanation": "Les batteries lithium présentent un risque de ré-inflammation prolongé."},
+   {"question": "Avant d'ouvrir une porte palière chaude, on :", "options": ["Ouvre en grand rapidement", "Se protège derrière la porte avec une lance prête", "Enfonce la porte à l'épaule", "Arrose la serrure uniquement"], "answer": 1, "explanation": "L'ouverture contrôlée avec protection hydraulique évite le backdraft."},
+   {"question": "En parking souterrain, l'engagement se fait :", "options": ["Seul pour gagner du temps", "En binôme sous ARI avec repérage des issues", "Sans ARI si la fumée est légère", "Avec un ventilateur devant soi"], "answer": 1, "explanation": "Binôme, ARI et repérage des issues sont obligatoires en souterrain."},
+   {"question": "Le rollover se reconnaît à :", "options": ["Des fumées blanches légères", "Des langues de feu courant au plafond", "Une odeur de gaz", "Un silence total"], "answer": 1, "explanation": "Le rollover annonce souvent l'embrasement généralisé éclair."},
+   {"question": "Face à des fumées sombres pulsant sous pression, on :", "options": ["Ouvre pour ventiler", "N'ouvre pas sans protection hydraulique", "Casque la vitre", "Arrose la façade"], "answer": 1, "explanation": "Les pulsations annoncent un backdraft : ouverture interdite sans protection."},
+  ],
+ },
+ {
+  id: "qcm-extra-sap1",
+  title: "Secourisme — Arrêt cardiaque et DAE",
+  level: "niveau-1",
+  category: "secourisme",
+  questions: [
+   {"question": "La profondeur des compressions chez l'adulte est de :", "options": ["1 à 2 cm", "3 à 4 cm", "5 à 6 cm", "10 cm"], "answer": 2, "explanation": "5 à 6 cm au centre de la poitrine, bras tendus."},
+   {"question": "Chaque minute sans massage réduit les chances de survie d'environ :", "options": ["1 %", "5 %", "10 %", "50 %"], "answer": 2, "explanation": "Environ 10 % par minute : l'action immédiate est décisive."},
+   {"question": "Pendant l'analyse du DAE, on doit :", "options": ["Continuer le massage", "Ne plus toucher la victime", "Mettre la victime en PLS", "Lui parler fort"], "answer": 1, "explanation": "Tout contact perturbe l'analyse du rythme par le DAE."},
+   {"question": "Une victime inconsciente qui ne respire pas normalement est :", "options": ["En PLS", "En arrêt cardiaque : massage immédiat", "Endormie", "En crise d'épilepsie"], "answer": 1, "explanation": "Inconscience + absence de respiration normale = arrêt cardiaque."},
+   {"question": "Avant de coller les électrodes du DAE, on :", "options": ["Mouille la poitrine", "Met la victime torse nu et sèche la peau", "Place la victime assise", "Attend le médecin"], "answer": 1, "explanation": "Torse nu et peau sèche pour une bonne adhérence des électrodes."},
+  ],
+ },
+ {
+  id: "qcm-extra-sap2",
+  title: "Secourisme — Plaies, brûlures, malaises",
+  level: "niveau-1",
+  category: "secourisme",
+  questions: [
+   {"question": "Un corps étranger enfoncé dans une plaie doit être :", "options": ["Retiré immédiatement", "Laissé en place et calé", "Poussé plus profondément", "Tourné pour vérifier"], "answer": 1, "explanation": "Le retirer aggraverait l'hémorragie : on le cale avec des compresses."},
+   {"question": "Les signes d'AVC sont :", "options": ["Fièvre et toux", "Visage asymétrique, bras qui tombe, parole trouble", "Douleur au dos", "Démangeaisons"], "answer": 1, "explanation": "Ces trois signes imposent une alerte médicale immédiate."},
+   {"question": "Une brûlure est grave si elle dépasse :", "options": ["La taille d'une pièce", "La paume de la victime", "La taille d'une main entière", "10 cm de diamètre"], "answer": 1, "explanation": "Au-delà de la surface de la paume de la victime, c'est une urgence."},
+   {"question": "En cas d'allergie grave avec gonflement du visage, on :", "options": ["Donne à boire", "Alerte médicale immédiate et surveillance", "Fait marcher la victime", "Applique de la glace sur la gorge"], "answer": 1, "explanation": "L'œdème peut obstruer les voies aériennes : urgence vitale."},
+   {"question": "Une hypoglycémie se manifeste par :", "options": ["Sueurs, tremblements, troubles du comportement", "Soif intense uniquement", "Fièvre élevée", "Perte de cheveux"], "answer": 0, "explanation": "Sueurs, tremblements et comportement bizarre évoquent une hypoglycémie."},
+  ],
+ },
+ {
+  id: "qcm-extra-od1",
+  title: "Opérations — Secours routier et inondations",
+  level: "niveau-2",
+  category: "operations",
+  questions: [
+   {"question": "En secours routier, l'action qui précède toutes les autres est :", "options": ["La désincarcération", "Le balisage et la protection", "La coupure de batterie", "L'appel de la grue"], "answer": 1, "explanation": "Le balisage protège secouristes et victimes de la circulation."},
+   {"question": "La sortie d'une victime coincée respecte :", "options": ["La vitesse avant tout", "L'axe tête-cou-tronc", "Les membres d'abord", "Le siège incliné"], "answer": 1, "explanation": "Le respect de l'axe tête-cou-tronc prévient les lésions du rachis."},
+   {"question": "Avant d'entrer dans une cave inondée, on :", "options": ["Coupe l'alimentation électrique", "Allume une lampe à flamme", "Retire ses chaussures", "Ouvre les fenêtres"], "answer": 0, "explanation": "Risque d'électrocution : coupure du courant avant tout accès."},
+   {"question": "On ne pénètre pas dans un courant dépassant :", "options": ["La cheville", "Mi-mollet sans équipement spécialisé", "La taille", "Le cou"], "answer": 1, "explanation": "Au-delà de mi-mollet, l'eau vive emporte : matériel spécialisé requis."},
+   {"question": "Le calage d'un véhicule accidenté sert à :", "options": ["Le remorquer", "Le stabiliser pour protéger victimes et secouristes", "Le réparer", "L'éloigner de la route"], "answer": 1, "explanation": "Un véhicule instable menace la victime et les secouristes pendant la désincarcération."},
+  ],
+ },
+ {
+  id: "qcm-extra-rt1",
+  title: "Risques technologiques — Chimique, gaz, électricité",
+  level: "niveau-2",
+  category: "risques",
+  questions: [
+   {"question": "Face à un risque chimique, on s'approche :", "options": ["Vent de dos", "Vent de face ou de côté", "En contrebas", "Rapidement"], "answer": 1, "explanation": "Les vapeurs se déplacent avec le vent : approche vent de face ou de côté."},
+   {"question": "Le code Kemler sur un camion indique :", "options": ["La vitesse maximale", "Les dangers et le numéro ONU du produit", "Le poids du chargement", "La destination"], "answer": 1, "explanation": "Le panneau orange code Kemler identifie le produit et ses dangers."},
+   {"question": "La zone d'exclusion (rouge) est :", "options": ["Ouverte à tous", "Réservée aux équipes protégées", "Le poste de commandement", "La zone de décontamination"], "answer": 1, "explanation": "Seules les équipes équipées pénètrent la zone d'exclusion."},
+   {"question": "Un câble électrique au sol est considéré :", "options": ["Hors tension", "Sous tension jusqu'à coupure confirmée", "Inoffensif s'il ne bouge pas", "Coupable d'économie"], "answer": 1, "explanation": "Tant que la coupure n'est pas confirmée, le câble est dangereux."},
+   {"question": "Le propane, plus lourd que l'air :", "options": ["S'élève au plafond", "S'accumule au sol et dans les points bas", "Se dissout dans l'eau", "Est inodore"], "answer": 1, "explanation": "Les gaz lourds stagnent au sol : risque d'explosion en point bas."},
+  ],
+ },
+ {
+  id: "qcm-extra-sde1",
+  title: "Sauvetage — Déblaiement et hauteur",
+  level: "niveau-avance",
+  category: "sauvetage",
+  questions: [
+   {"question": "Avant de pénétrer dans des décombres, on :", "options": ["Étaye la structure", "Court vers les cris", "Retire les gravats à la main", "Arrose abondamment"], "answer": 0, "explanation": "L'étaiement prévient les effondrements secondaires."},
+   {"question": "En travail en hauteur, la sécurisation comprend :", "options": ["Une seule corde", "Corde de travail + corde de sécurité", "Une échelle tenue", "Un baudrier simple"], "answer": 1, "explanation": "La double sécurisation est obligatoire : travail et sécurité."},
+   {"question": "Avant d'entrer dans un espace confiné, on :", "options": ["Détecte l'atmosphère", "Allume une bougie", "Envoie le plus léger", "Ferme l'accès"], "answer": 0, "explanation": "La détection préalable évite l'anoxie, mortelle en quelques secondes."},
+   {"question": "La localisation des victimes sous décombres utilise :", "options": ["Uniquement les cris", "Appel, écoute, chiens et caméras", "Le hasard", "Des pelleteuses immédiates"], "answer": 1, "explanation": "Plusieurs moyens complémentaires localisent les victimes avant déblaiement."},
+   {"question": "Un ancrage pour corde doit résister au minimum à :", "options": ["1 kN", "5 kN", "12 kN", "50 kN"], "answer": 2, "explanation": "12 kN est la résistance minimale d'un ancrage de sauvetage."},
+  ],
+ },
+ {
+  id: "qcm-extra-mat1",
+  title: "Matériel — ARI et établissements",
+  level: "niveau-1",
+  category: "materiel",
+  questions: [
+   {"question": "Le signal sonore de fin d'autonomie de l'ARI retentit vers :", "options": ["10 bar", "50-60 bar", "150 bar", "300 bar"], "answer": 1, "explanation": "Vers 50-60 bar, il impose le repli immédiat du binôme."},
+   {"question": "Le tuyau de 45 mm sert à :", "options": ["L'alimentation longue distance", "L'attaque, à 500 l/min sous 6 bar", "L'épuisement", "L'alimentation des échelles"], "answer": 1, "explanation": "Le 45 mm est le tuyau d'attaque maniable."},
+   {"question": "Un établissement en échelle comprend :", "options": ["Un tuyau unique", "Une division alimentant deux lignes", "Un siphon", "Une échelle à coulisse"], "answer": 1, "explanation": "La division alimente deux lignes d'attaque à partir d'une alimentation."},
+   {"question": "Avant d'appeler l'eau, on vérifie :", "options": ["La météo", "Raccords serrés et tuyaux déroulés sans pliure", "La pression des pneus", "Le niveau de carburant"], "answer": 1, "explanation": "Un contrôle complet de l'établissement précède la mise en pression."},
+   {"question": "Sous ARI, le travail se fait toujours :", "options": ["Seul", "En binôme avec liaison maintenue", "À trois minimum", "Sans masque en reconnaissance"], "answer": 1, "explanation": "Le binôme est la règle absolue sous ARI."},
+  ],
+ },
+ {
+  id: "qcm-extra-mix1",
+  title: "Révision générale — Tous niveaux",
+  level: "niveau-avance",
+  category: "operations",
+  questions: [
+   {"question": "La marche générale des opérations commence par :", "options": ["L'attaque", "La reconnaissance", "Le déblai", "La protection"], "answer": 1, "explanation": "La reconnaissance précède toujours les autres phases."},
+   {"question": "Le message d'ambiance est transmis :", "options": ["En fin d'intervention", "Dans les premières minutes", "Le lendemain", "Au maire uniquement"], "answer": 1, "explanation": "Il informe le CTA-CODIS dès l'arrivée sur les lieux."},
+   {"question": "Le numéro d'urgence européen est le :", "options": ["15", "17", "18", "112"], "answer": 3, "explanation": "Le 112 fonctionne dans toute l'Union européenne."},
+   {"question": "Un garrot posé doit être :", "options": ["Desserré régulièrement", "Maintenu avec l'heure de pose notée", "Caché sous un pansement", "Retiré par le secouriste"], "answer": 1, "explanation": "Jamais desserré, l'heure de pose est indispensable au médecin."},
+   {"question": "La classe de feu F concerne :", "options": ["Les métaux", "Les huiles et graisses de cuisson", "Les gaz", "Les bois"], "answer": 1, "explanation": "Les feux d'huile de cuisson relèvent de la classe F."},
+   {"question": "L'angle de dressage d'une échelle à coulisse est d'environ :", "options": ["45°", "60°", "75°", "90°"], "answer": 2, "explanation": "75° environ, avec 1 m de dépassement au point d'appui."},
+  ],
+ }
+];

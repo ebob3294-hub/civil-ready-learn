@@ -4,7 +4,7 @@ import { streamText } from "ai";
 const RUN_ID = "X-Lovable-AIG-Run-ID";
 
 export async function explainTopic(question: string, lang: "fr" | "ar") {
-  const apiKey = process.env.LOVABLE_API_KEY;
+  const apiKey = process.env["LOVABLE_API_KEY"];
   if (!apiKey) throw new Error("Configuration IA manquante.");
   let runId: string | undefined;
   const provider = createOpenAI({

@@ -52,6 +52,13 @@ export function AppShell({
               {lang === "fr" ? "ع" : "FR"}
             </button>
             <Link
+              to="/assistant"
+              aria-label="Assistant IA"
+              className="tap grid size-9 shrink-0 place-items-center rounded-full bg-sidebar-accent text-sidebar-accent-foreground"
+            >
+              <Lightbulb className="size-5" />
+            </Link>
+            <Link
               to="/apropos"
               aria-label={t("about")}
               className="tap grid size-9 shrink-0 place-items-center rounded-full bg-sidebar-accent text-sidebar-accent-foreground"

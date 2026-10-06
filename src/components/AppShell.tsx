@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { BookOpen, ChevronLeft, Gamepad2, House, Info, ListChecks, Shield, Wrench } from "lucide-react";
+import { BookOpen, ChevronLeft, Gamepad2, House, Info, Lightbulb, ListChecks, Shield, Wrench } from "lucide-react";
 import type { ReactNode } from "react";
 import { useLang, useT } from "@/lib/i18n";
 

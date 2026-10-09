@@ -6,6 +6,8 @@ import { quizzesPlus } from "./quizzes-plus";
 import { quizzesBanque } from "./quizzes-banque";
 import { quizzesExtra } from "./quizzes-extra";
 import { quizzesSeries } from "./quizzes-series";
+import { quizzesV2 } from "./quizzes-v2";
+import { quizzesV3 } from "./quizzes-v3";
 
 export const quizzes: Quiz[] = [
   ...baseQuizzes,
@@ -15,6 +17,8 @@ export const quizzes: Quiz[] = [
   ...quizzesBanque,
   ...quizzesExtra,
   ...quizzesSeries,
+  ...quizzesV2,
+  ...quizzesV3,
 ];
 
 export const getQuiz = (id: string) => quizzes.find((q) => q.id === id);

@@ -40,6 +40,15 @@ import imgHymenopteres from "@/assets/materiel-hymenopteres.jpg";
 import imgFpt from "@/assets/engin-fpt.jpg";
 import imgVsr from "@/assets/engin-vsr.jpg";
 
+import imgCoussins from "@/assets/materiel-coussins.jpg";
+import imgDrone from "@/assets/materiel-drone.jpg";
+import imgPc from "@/assets/engin-pc.jpg";
+import imgMotopompe from "@/assets/materiel-motopompe.jpg";
+import imgLigneVie from "@/assets/materiel-ligne-vie.jpg";
+import imgRechauffement from "@/assets/materiel-rechauffement.jpg";
+import imgPediatrie from "@/assets/materiel-pediatrie.jpg";
+import imgSangles from "@/assets/materiel-sangles.jpg";
+
 export type MaterielItem = {
   id: string;
   name: string;
@@ -608,6 +617,118 @@ export const materiels: MaterielItem[] = [
       "Balisage et éclairage de chantier",
       "Matériel de découpe et d'étaiement léger",
       "Travaille en complément du VSAV",
+    ],
+  },
+  {
+    id: "coussins-levage",
+    name: "Coussins de levage haute pression",
+    group: "materiel",
+    image: imgCoussins,
+    desc: "Levage et soulèvement de charges lourdes : véhicules, dalle effondrée, victime coincée.",
+    items: [
+      "Coussins de 12, 25 et 40 tonnes, souples et empilables",
+      "Manodétendeur avec manomètre de contrôle",
+      "Tuyaux haute pression et raccords rapides",
+      "Cales en bois et madriers pour le calage progressif",
+      "Levage par paliers : jamais au-delà de la pression max",
+    ],
+  },
+  {
+    id: "drone",
+    name: "Drone de reconnaissance",
+    group: "materiel",
+    image: imgDrone,
+    desc: "Reconnaissance aérienne du sinistre : vision thermique, recherche de victimes, suivi du feu.",
+    items: [
+      "Caméra thermique pour détection de points chauds",
+      "Retour vidéo en temps réel sur la tablette du pilote",
+      "Recherche de victimes en milieu naturel",
+      "Cartographie et suivi de l'évolution du feu",
+      "Vols encadrés : conditions météo et zones interdites",
+    ],
+  },
+  {
+    id: "engin-pc",
+    name: "Véhicule poste de commandement (PC)",
+    group: "engin",
+    image: imgPc,
+    desc: "Cœur de la conduite de l'intervention sur les grands sinistres.",
+    items: [
+      "Postes radio et téléphone, relais de transmission",
+      "Tablettes, plans, main courante et schéma de tactique",
+      "Antenne pylône et mât relevable",
+      "Chef des opérations, officier PC, opérateurs radio",
+      "Alimentation autonome et éclairage de nuit",
+    ],
+  },
+  {
+    id: "motopompe",
+    name: "Motopompe flottante",
+    group: "materiel",
+    image: imgMotopompe,
+    desc: "Amorçage facile, flotte sur l'eau : idéal inondations et plans d'eau.",
+    items: [
+      "Débit 400 à 1000 L/min selon modèle",
+      "Aspiration directe en surface, pas de désamorçage",
+      "Flotteurs intégrés, moteur 4 temps",
+      "Tuyaux d'aspiration et de refoulement",
+      "Épuisement de caves et sous-sols inondés",
+    ],
+  },
+  {
+    id: "ligne-vie",
+    name: "Ligne de vie et harnais",
+    group: "materiel",
+    image: imgLigneVie,
+    desc: "Travail en hauteur, échafaudage, toiture : protection contre la chute.",
+    items: [
+      "Harnais antichute complet réglable",
+      "Longe avec absorbeur d'énergie",
+      "Corde semi-statique et connecteurs à verrouillage",
+      "Point d'ancrage certifié, jamais sur une gouttière",
+      "Contrôle visuel avant chaque emploi",
+    ],
+  },
+  {
+    id: "rechauffement",
+    name: "Lot de réchauffement",
+    group: "materiel",
+    image: imgRechauffement,
+    desc: "Lutte contre l'hypothermie de la victime pendant le transport.",
+    items: [
+      "Couvertures de survie et capuchon isotherme",
+      "Capes et suremballages thermiques",
+      "Chauffage portable de sac à dos",
+      "Retrait des vêtements mouillés avant l'emballage",
+      "Surveillance continue de la température",
+    ],
+  },
+  {
+    id: "pediatrie",
+    name: "Lot de pédiatrie",
+    group: "materiel",
+    image: imgPediatrie,
+    desc: "Bilan et secours adaptés aux enfants et nourrissons.",
+    items: [
+      "Masque de l'échelle pédiatrique : doses selon la longueur",
+      "Colliers cervicaux de tailles enfant et nourrisson",
+      "Ballon insufflateur pédiatrique avec réserve",
+      "Brassard tensiomètre enfant",
+      "Approche rassurante : présence du parent si possible",
+    ],
+  },
+  {
+    id: "sangles",
+    name: "Sangles de levage et d'arrimage",
+    group: "materiel",
+    image: imgSangles,
+    desc: "Levage, traction et arrimage des charges lors du sauvetage routier.",
+    items: [
+      "Sangles plates en polyester 2 à 10 tonnes",
+      "Ridoirs à sangle (ratchet) pour tension contrôlée",
+      "Élingues et manilles de levage",
+      "Protection des angles avec manchons",
+      "Jamais de sangle sur une arête vive non protégée",
     ],
   },
 ];

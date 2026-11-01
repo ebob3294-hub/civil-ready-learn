@@ -40,6 +40,15 @@ import imgHymenopteres from "@/assets/materiel-hymenopteres.jpg";
 import imgFpt from "@/assets/engin-fpt.jpg";
 import imgVsr from "@/assets/engin-vsr.jpg";
 
+import imgCoussins from "@/assets/materiel-coussins.jpg";
+import imgDrone from "@/assets/materiel-drone.jpg";
+import imgPc from "@/assets/engin-pc.jpg";
+import imgMotopompe from "@/assets/materiel-motopompe.jpg";
+import imgLigneVie from "@/assets/materiel-ligne-vie.jpg";
+import imgRechauffement from "@/assets/materiel-rechauffement.jpg";
+import imgPediatrie from "@/assets/materiel-pediatrie.jpg";
+import imgSangles from "@/assets/materiel-sangles.jpg";
+
 export type MaterielItem = {
   id: string;
   name: string;

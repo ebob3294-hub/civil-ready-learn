@@ -671,7 +671,7 @@ export const materiels: MaterielItem[] = [
       "Débit 400 à 1000 L/min selon modèle",
       "Aspiration directe en surface, pas de désamorçage",
       "Flotteurs intégrés, moteur 4 temps",
-      " Tuyaux d'aspiration et de refoulement,
+      "Tuyaux d'aspiration et de refoulement",
       "Épuisement de caves et sous-sols inondés",
     ],
   },

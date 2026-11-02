@@ -48,6 +48,12 @@ import imgLigneVie from "@/assets/materiel-ligne-vie.jpg";
 import imgRechauffement from "@/assets/materiel-rechauffement.jpg";
 import imgPediatrie from "@/assets/materiel-pediatrie.jpg";
 import imgSangles from "@/assets/materiel-sangles.jpg";
+import imgPoteauIncendie from "@/assets/materiel/poteau-incendie.png";
+import imgBoucheIncendie from "@/assets/materiel/bouche-incendie.png";
+import imgExtincteursTypes from "@/assets/materiel/extincteurs-types.png";
+import imgExtincteurRoues from "@/assets/materiel/extincteur-roues.png";
+import imgEnginCcgc from "@/assets/materiel/engin-ccgc.png";
+import imgTuyaux110 from "@/assets/materiel/tuyaux-110.png";
 
 export type MaterielItem = {
   id: string;
@@ -729,6 +735,90 @@ export const materiels: MaterielItem[] = [
       "Élingues et manilles de levage",
       "Protection des angles avec manchons",
       "Jamais de sangle sur une arête vive non protégée",
+    ],
+  },
+  {
+    id: "poteau-incendie",
+    name: "Poteau d'incendie",
+    group: "materiel",
+    image: imgPoteauIncendie,
+    desc: "Hydrant aérien : deux sorties DN 65 et une sortie DN 100.",
+    items: [
+      "Hydrant aérien rouge, installé sur le trottoir ou en bord de voie",
+      "Deux sorties DN 65 avec vannes et demi-raccords",
+      "Sortie DN 100 au sommet pour la grande ligne",
+      "Débit normalisé : environ 60 m³/h sous 1 bar",
+      "Ouvrir à fond et progressivement avec la clé double",
+    ],
+  },
+  {
+    id: "bouche-incendie",
+    name: "Bouche d'incendie",
+    group: "materiel",
+    image: imgBoucheIncendie,
+    desc: "Hydrant enterré sous plaque, ouverture à la clé à bouche.",
+    items: [
+      "Hydrant enterré sous plaque carrée gravée « bouche d'incendie »",
+      "Sortie DN 100 avec demi-raccord vers le bas",
+      "Ouverture à la clé à bouche (griffe)",
+      "Personne debout au-dessus de l'orifice pendant l'ouverture",
+      "Vidanger après usage pour éviter le gel",
+    ],
+  },
+  {
+    id: "extincteurs-types",
+    name: "Types d'extincteurs",
+    group: "materiel",
+    image: imgExtincteursTypes,
+    desc: "Eau pulvérisée, mousse, poudre ABC, CO2 et wet chemical.",
+    items: [
+      "Eau pulvérisée 6 L : feux de classe A (solides)",
+      "Eau + additif / mousse 6 L : classes A et B (liquides)",
+      "Poudre ABC 6 kg : polyvalente, classes A, B et C",
+      "CO2 5 kg : feux électriques et liquides, corne noire",
+      "Wet chemical 6 L : feux de classe F (huiles de cuisson)",
+    ],
+  },
+  {
+    id: "extincteur-roues",
+    name: "Extincteur à roues",
+    group: "materiel",
+    image: imgExtincteurRoues,
+    desc: "Grande capacité 50 kg pour les risques industriels.",
+    items: [
+      "Poudre ABC 50 kg sur chariot roulant",
+      "Tuyau flexible avec canon portatif",
+      "Poids et débit importants : opération à deux",
+      "Pour feux importants : carburants, ateliers, dépôts",
+      "Complète l'extincteur portatif 9 kg ABC",
+    ],
+  },
+  {
+    id: "engin-ccgc",
+    name: "Camion-citerne grande capacité (CCGC)",
+    group: "engin",
+    image: imgEnginCcgc,
+    desc: "Relais d'eau : 8 000 à 12 000 litres et refoulements multiples.",
+    items: [
+      "Citerne de 8 000 à 12 000 litres d'eau",
+      "Relais entre les hydrants et les engins d'attaque",
+      "Panneaux de refoulement multiples pour alimenter en parallèle",
+      "Ligne d'aspiration et matériel de grande ligne DN 100",
+      "Renfort indispensable sur les feux longs et les feux de forêt",
+    ],
+  },
+  {
+    id: "tuyaux-110",
+    name: "Tuyaux DN 100 et liaisons",
+    group: "materiel",
+    image: imgTuyaux110,
+    desc: "Grande ligne d'alimentation, division et lance : l'établissement complet.",
+    items: [
+      "Tuyaux DN 100 : alimentation et liaisons, faibles pertes de charge",
+      "Raccords Storz symétriques avec joint et demi-raccord verrouillable",
+      "Division DN 100 → 2 × DN 65 : sortie des petites lignes",
+      "Petite ligne DN 65 vers la lance (débit 250 à 500 l/min)",
+      "Établir hors du passage, franchir les chaussées avec protection",
     ],
   },
 ];

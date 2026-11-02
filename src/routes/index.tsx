@@ -10,7 +10,7 @@ import { loadAllProgress } from "@/lib/progress";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Formation Protection Civile — Leçons & QCM Pompiers" },
+      { title: "Formation P.C — Leçons & QCM Pompiers" },
       {
         name: "description",
         content:
@@ -44,7 +44,7 @@ function Dashboard() {
 
 
   return (
-    <AppShell title="Protection Civile" subtitle="Centre de formation & entraînement">
+    <AppShell title="Formation P.C" subtitle="Centre de formation & entraînement">
       <section className="bg-alert shadow-alert rounded-2xl px-4 py-5 text-primary-foreground">
         <p className="text-[11px] font-semibold tracking-[0.18em] uppercase opacity-80">
           Prêt à intervenir

@@ -5,7 +5,7 @@ import { BookOpen, CheckCircle2, Github, Globe, Info, ListChecks, Mail, Shield, 
 export const Route = createFileRoute("/apropos")({
   head: () => ({
     meta: [
-      { title: "À propos — Formation Protection Civile" },
+      { title: "À propos — Formation P.C" },
       {
         name: "description",
         content:
@@ -30,13 +30,14 @@ function AboutPage() {
             <Shield className="size-7" />
           </span>
           <div>
-            <h2 className="font-display text-xl font-semibold uppercase">Formation Protection Civile</h2>
+            <h2 className="font-display text-xl font-semibold uppercase">Formation P.C</h2>
             <p className="text-sm opacity-90">Leçons & QCM pour sapeurs-pompiers</p>
           </div>
         </div>
         <p className="mt-4 text-sm leading-relaxed opacity-90">
-          Application mobile conçue pour accompagner la formation des sapeurs-pompiers et du personnel de Protection Civile.
-          Révisez les fondamentaux, approfondissez les spécialités et évaluez vos connaissances par le QCM.
+        L'essentiel de la Protection Civile (P.C) à portée de main.
+        Entraînez-vous, approfondissez vos spécialités et testez votre niveau grâce à nos QCM et jeux d'images.
+        Une formation continue, simple et efficace...
         </p>
       </section>
 
@@ -44,7 +45,7 @@ function AboutPage() {
         <InfoCard
           icon={<User className="size-5" />}
           title="Développeur"
-          content="Ayoub Sadkouni"
+          content="Bob Evan (A/S)"
         />
         <a
           href="mailto:sadkouni1@gmail.com"

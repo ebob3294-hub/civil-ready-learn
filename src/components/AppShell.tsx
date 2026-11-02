@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { BookOpen, ChevronLeft, Gamepad2, House, Info, Lightbulb, ListChecks, Shield, Wrench } from "lucide-react";
+import { BookOpen, ChevronLeft, Gamepad2, House, Info, ListChecks, Shield, Wrench } from "lucide-react";
 import type { ReactNode } from "react";
-import { useLang, useT } from "@/lib/i18n";
+import { useT } from "@/lib/i18n"; // تم إزالة useLang لأنه لم يعد مستخدماً
 
 export function AppShell({
   title,
@@ -15,7 +15,6 @@ export function AppShell({
   children: ReactNode;
 }) {
   const t = useT();
-  const { lang, setLang } = useLang();
 
   return (
     <div className="mx-auto flex min-h-screen w-full max-w-md flex-col bg-background">
@@ -42,22 +41,9 @@ export function AppShell({
               ) : null}
             </div>
           </div>
+
+          {/* تم حذف زر اللغة وزر المصباح بالكامل من هنا، وبقي زر "حول" (Info) فقط */}
           <div className="flex shrink-0 items-center gap-2">
-            <button
-              type="button"
-              onClick={() => setLang(lang === "fr" ? "ar" : "fr")}
-              aria-label={t("language")}
-              className="tap grid h-9 shrink-0 place-items-center rounded-full bg-sidebar-accent px-3 text-xs font-semibold text-sidebar-accent-foreground"
-            >
-              {lang === "fr" ? "ع" : "FR"}
-            </button>
-            <Link
-              to="/assistant"
-              aria-label="Assistant IA"
-              className="tap grid size-9 shrink-0 place-items-center rounded-full bg-sidebar-accent text-sidebar-accent-foreground"
-            >
-              <Lightbulb className="size-5" />
-            </Link>
             <Link
               to="/apropos"
               aria-label={t("about")}

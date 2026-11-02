@@ -6,9 +6,9 @@ import { clearHistory, getLevel, loadHistory, type QuizResult } from "@/lib/prog
 export const Route = createFileRoute("/resultats")({
   head: () => ({
     meta: [
-      { title: "Mes résultats — Formation SP" },
+      { title: "Mes résultats — Formation P.C" },
       { name: "description", content: "Historique des QCM et niveau de progression, sauvegardés hors-ligne." },
-      { property: "og:title", content: "Mes résultats — Formation SP" },
+      { property: "og:title", content: "Mes résultats — Formation P.C" },
       { property: "og:description", content: "Historique des QCM et niveau de progression." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },

@@ -1,9 +1,9 @@
 import type { CapacitorConfig } from "@capacitor/cli";
 
 const config: CapacitorConfig = {
-  appId: "com.protectioncivile.formationsp",
-  appName: "Formation SP",
-  webDir: "dist/client",
+  appId: "com.pc.app",
+  appName: "Formation P.C",
+  webDir: "dist",
   android: {
     allowMixedContent: true,
   },

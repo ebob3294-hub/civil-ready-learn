@@ -9,6 +9,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import { App } from "@capacitor/app"; // <--- 1. استيراد حزمة Capacitor App
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -138,6 +139,22 @@ function RootComponent() {
   useEffect(() => {
     void registerServiceWorker();
   }, []);
+
+  // --- 2. إضافة معالج زر الرجوع لأندرويد ---
+  useEffect(() => {
+    const backButtonListener = App.addListener('backButton', ({ canGoBack }) => {
+      if (canGoBack) {
+        window.history.back(); // الرجوع للصفحة السابقة
+      } else {
+        App.exitApp(); // الخروج من التطبيق إذا كان في الصفحة الرئيسية
+      }
+    });
+
+    return () => {
+      backButtonListener.then(listener => listener.remove());
+    };
+  }, []);
+  // ----------------------------------------
 
   return (
     <QueryClientProvider client={queryClient}>

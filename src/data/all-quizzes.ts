@@ -8,6 +8,8 @@ import { quizzesExtra } from "./quizzes-extra";
 import { quizzesSeries } from "./quizzes-series";
 import { quizzesV2 } from "./quizzes-v2";
 import { quizzesV3 } from "./quizzes-v3";
+import { quizzesV4 } from "./quizzes-v4";
+import { quizzesHydraulique } from "./quizzes-hydraulique";
 
 export const quizzes: Quiz[] = [
   ...baseQuizzes,
@@ -19,6 +21,8 @@ export const quizzes: Quiz[] = [
   ...quizzesSeries,
   ...quizzesV2,
   ...quizzesV3,
+  ...quizzesV4,
+  ...quizzesHydraulique,
 ];
 
 export const getQuiz = (id: string) => quizzes.find((q) => q.id === id);

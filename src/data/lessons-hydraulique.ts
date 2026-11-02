@@ -154,7 +154,7 @@ export const lessonsHydraulique: Lesson[] = [
         type: "list",
         items: [
           "FPT : environ 2 000 à 3 000 litres d'eau.",
-          "Le foyer d'attaque消耗 vite : une lance à 500 l/min vide une citerne en 5 à 6 minutes.",
+          "Le foyer consomme vite : une lance à 500 l/min vide une citerne en 5 à 6 minutes.",
           "Dès l'arrivée, un équipier prépare l'alimentation pendant que l'équipe attaque.",
         ],
       },

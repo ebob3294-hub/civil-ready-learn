@@ -48,12 +48,12 @@ import imgLigneVie from "@/assets/materiel-ligne-vie.jpg";
 import imgRechauffement from "@/assets/materiel-rechauffement.jpg";
 import imgPediatrie from "@/assets/materiel-pediatrie.jpg";
 import imgSangles from "@/assets/materiel-sangles.jpg";
-import imgPoteauIncendie from "@/assets/materiel/poteau-incendie.png";
-import imgBoucheIncendie from "@/assets/materiel/bouche-incendie.png";
-import imgExtincteursTypes from "@/assets/materiel/extincteurs-types.png";
-import imgExtincteurRoues from "@/assets/materiel/extincteur-roues.png";
-import imgEnginCcgc from "@/assets/materiel/engin-ccgc.png";
-import imgTuyaux110 from "@/assets/materiel/tuyaux-110.png";
+import imgPoteauIncendie from "@/assets/materiel/poteau-incendie.jpg";
+import imgBoucheIncendie from "@/assets/materiel/bouche-incendie.jpg";
+import imgExtincteursTypes from "@/assets/materiel/extincteurs-types.jpg";
+import imgExtincteurRoues from "@/assets/materiel/extincteur-roues.jpg";
+import imgEnginCcgc from "@/assets/materiel/engin-ccgc.jpg";
+import imgTuyaux110 from "@/assets/materiel/tuyaux-110.jpg";
 
 export type MaterielItem = {
   id: string;

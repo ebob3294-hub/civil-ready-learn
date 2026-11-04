@@ -13,21 +13,25 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setThemeState] = useState<Theme>("light");
 
   useEffect(() => {
+    let mq: MediaQueryList | null = null;
+    let onChange: (() => void) | null = null;
     try {
       const saved = localStorage.getItem(KEY);
       if (saved === "light" || saved === "dark") {
         setThemeState(saved);
-        return;
+      } else {
+        // Aucun choix enregistré : suivre la préférence du système.
+        mq = window.matchMedia("(prefers-color-scheme: dark)");
+        onChange = () => setThemeState(mq!.matches ? "dark" : "light");
+        onChange();
+        mq.addEventListener("change", onChange);
       }
-      // Aucun choix enregistré : suivre la préférence du système.
-      const mq = window.matchMedia("(prefers-color-scheme: dark)");
-      const apply = () => setThemeState(mq.matches ? "dark" : "light");
-      apply();
-      mq.addEventListener("change", apply);
-      return () => mq.removeEventListener("change", apply);
     } catch {
       /* stockage indisponible */
     }
+    return () => {
+      if (mq && onChange) mq.removeEventListener("change", onChange);
+    };
   }, []);
 
   useEffect(() => {

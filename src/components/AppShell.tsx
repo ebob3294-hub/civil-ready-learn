@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
-import { BookOpen, ChevronLeft, Gamepad2, House, Info, Lightbulb, ListChecks, Shield, Wrench } from "lucide-react";
+import { BookOpen, ChevronLeft, Gamepad2, House, Info, Lightbulb, ListChecks, Moon, Shield, Sun, Wrench } from "lucide-react";
 import type { ReactNode } from "react";
 import { useLang, useT } from "@/lib/i18n";
+import { useTheme } from "@/lib/theme";
 
 export function AppShell({
   title,
@@ -16,6 +17,7 @@ export function AppShell({
 }) {
   const t = useT();
   const { lang, setLang } = useLang();
+  const { theme, setTheme } = useTheme();
 
   return (
     <div className="mx-auto flex min-h-screen w-full max-w-md flex-col bg-background">
@@ -43,6 +45,14 @@ export function AppShell({
             </div>
           </div>
           <div className="flex shrink-0 items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              aria-label={t("theme")}
+              className="tap grid size-9 shrink-0 place-items-center rounded-full bg-sidebar-accent text-sidebar-accent-foreground"
+            >
+              {theme === "dark" ? <Sun className="size-5" /> : <Moon className="size-5" />}
+            </button>
             <button
               type="button"
               onClick={() => setLang(lang === "fr" ? "ar" : "fr")}

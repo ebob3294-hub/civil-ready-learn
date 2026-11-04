@@ -14,6 +14,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { registerServiceWorker } from "../lib/register-sw";
 import { LanguageProvider } from "../lib/i18n";
+import { ThemeProvider } from "../lib/theme";
 
 
 function NotFoundComponent() {
@@ -142,8 +143,10 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <LanguageProvider>
-        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-        <Outlet />
+        <ThemeProvider>
+          {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+          <Outlet />
+        </ThemeProvider>
       </LanguageProvider>
     </QueryClientProvider>
   );

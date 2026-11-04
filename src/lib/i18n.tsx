@@ -32,6 +32,7 @@ export const t9n: Dict = {
   replay: { fr: "Rejouer", ar: "إعادة اللعب" },
   questions: { fr: "questions", ar: "سؤال" },
   offline: { fr: "Fonctionne hors ligne", ar: "يعمل بدون إنترنت" },
+  theme: { fr: "Thème", ar: "المظهر" },
 };
 
 const Ctx = createContext<{ lang: Lang; setLang: (l: Lang) => void }>({

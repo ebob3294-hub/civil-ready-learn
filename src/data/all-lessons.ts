@@ -7,6 +7,7 @@ import { lessonsExtra } from "./lessons-extra";
 import { lessonsV2 } from "./lessons-v2";
 import { lessonsV3 } from "./lessons-v3";
 import { lessonsHydraulique } from "./lessons-hydraulique";
+import { lessonsConduite } from "./lessons-conduite";
 
 export const lessons: Lesson[] = [
   ...baseLessons,
@@ -17,6 +18,7 @@ export const lessons: Lesson[] = [
   ...lessonsV2,
   ...lessonsV3,
   ...lessonsHydraulique,
+  ...lessonsConduite,
 ];
 
 export const getLesson = (id: string) => lessons.find((l) => l.id === id);

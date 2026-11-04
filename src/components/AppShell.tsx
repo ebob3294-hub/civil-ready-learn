@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
-import { BookOpen, ChevronLeft, Gamepad2, House, Info, Lightbulb, ListChecks, Shield, Wrench } from "lucide-react";
+import { BookOpen, ChevronLeft, Gamepad2, House, Info, Lightbulb, ListChecks, Moon, Shield, Sun, Wrench } from "lucide-react";
 import type { ReactNode } from "react";
 import { useLang, useT } from "@/lib/i18n";
+import { useTheme } from "@/lib/theme";
 
 export function AppShell({
   title,

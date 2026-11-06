@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { BookOpen, ChevronLeft, Gamepad2, House, Info, Lightbulb, ListChecks, Moon, Shield, Sun, Wrench } from "lucide-react";
+import { BookOpen, ChevronLeft, Gamepad2, House, Info, ListChecks, Moon, Shield, Sun, Wrench } from "lucide-react";
 import type { ReactNode } from "react";
 import { useLang, useT } from "@/lib/i18n";
 import { useTheme } from "@/lib/theme";
@@ -61,13 +61,6 @@ export function AppShell({
             >
               {lang === "fr" ? "ع" : "FR"}
             </button>
-            <Link
-              to="/assistant"
-              aria-label="Assistant IA"
-              className="tap grid size-9 shrink-0 place-items-center rounded-full bg-sidebar-accent text-sidebar-accent-foreground"
-            >
-              <Lightbulb className="size-5" />
-            </Link>
             <Link
               to="/apropos"
               aria-label={t("about")}
